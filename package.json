@@ -1,0 +1,11 @@
+{
+  "name": "geladeira-system",
+  "version": "1.0.0",
+  "description": "Feito para N3 do segundo semestre do Cesusc. Site e backend de uma geladeira",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Zac Milioli",
+  "license": "MIT"
+}
