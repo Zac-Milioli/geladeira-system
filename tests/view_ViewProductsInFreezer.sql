@@ -1,4 +1,3 @@
--- Criando a view para buscar produtos no freezer
 CREATE VIEW ViewProductsInFreezer
 AS
 SELECT 

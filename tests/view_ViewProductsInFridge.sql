@@ -1,4 +1,3 @@
--- Criando a view para buscar produtos na geladeira
 CREATE VIEW ViewProductsInFridge
 AS
 SELECT 
