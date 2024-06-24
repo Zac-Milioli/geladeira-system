@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models/db_conn');
 
-router.put('/:id', async (req, res) => {
+router.put('/products/:id', async (req, res) => {
     try {
         const id = parseInt(req.params.id);
         const { name, description, validity } = req.body;
@@ -13,7 +13,7 @@ router.put('/:id', async (req, res) => {
     }
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete('/products/:id', async (req, res) => {
     try {
         const id = parseInt(req.params.id);
         await db.executeProcedure('DeleteProductById', { id });
@@ -23,7 +23,7 @@ router.delete('/:id', async (req, res) => {
     }
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/products/:id', async (req, res) => {
     try {
         const id = parseInt(req.params.id);
         const result = await db.executeQuery(`SELECT * FROM products WHERE id = ${ id }`);

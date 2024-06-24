@@ -15,7 +15,10 @@
 
 <body onload="carregarDadosFreezer() + carregarDadosGeladeira()"> 
   <div class="container">
+    
     <div class="row">
+      <h1>GELADEIRA</h1>
+
       <div class="">
         <label for="name">Freezer</label>
         <table class="table" >
@@ -47,7 +50,6 @@
       </div>
     </div>
     <div class="col-5">
-      <h1>GELADEIRA</h1>
       <label for="id">id:</label>
       <input type="text" id="id" name="id">
 
@@ -69,7 +71,7 @@
       </div>
 
       <div class="buttons">
-        <button class="button-remove">Remover</button>
+        <button class="button-remove " onclick="excluir(document.getElementById('id').value)">Remover</button>
         <button class="button-edit">Editar</button>
         <button class="button-add">Adicionar</button>
       </div>

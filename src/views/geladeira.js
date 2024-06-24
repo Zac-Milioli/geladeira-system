@@ -95,15 +95,21 @@ async function gravar() {
 }
 
 async function excluir(selected_id) {
-    try{
-        const response = await fetch(`${url}/${selected_id}`, {
-            method: 'DELETE',
-            dataType: 'json',
-        }).then(result => {
-            limpar();
-            carregarDados();
-        })
-    }catch(error){
-        alert("Error: ", error)
+    try {
+        console.log(selected_id)
+        const response = await fetch(`${url}api/products/${selected_id}`, {
+            method: 'DELETE'
+        });
+
+        if (!response.ok) {
+            throw new Error('Erro ao excluir o produto');
+        }
+
+        const result = await response.json();
+        console.log('Produto excluído com sucesso:', result);
+    } catch (error) {
+      console.log("socorro")
     }
+    carregarDadosGeladeira()
+    carregarDadosFreezer()
 }

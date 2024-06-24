@@ -2,7 +2,7 @@ const sql = require("mssql");
 const config = {
     server: 'localhost',
     database: 'GELADEIRA',
-    port: 3000,
+    port: 1433,
     user: 'desespero',
     password: 'desespero123',
     trustServerCertificate: true,
@@ -33,6 +33,7 @@ async function executeProcedure(procedureName, parameters = {}) {
 async function executeQuery(query) {
     try {
         let pool = await sql.connect(config);
+        console.log(query)
         return await pool.request().query(query);
     } catch (err) {
         console.error('Database operation failed:', err);
