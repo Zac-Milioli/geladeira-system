@@ -22,4 +22,14 @@ router.delete('/id', async (req, res) => {
     }
 });
 
+router.get('/id', async (req, res) => {
+    try {
+        const { id } = req.body;
+        const result = await db.executeQuery(`SELECT * FROM products WHERE id = ${ id }`);
+        res.status(200).json(result.recordset);
+    } catch (error) {
+        res.status(500).send(error.message);
+    }
+})
+
 module.exports = router;
