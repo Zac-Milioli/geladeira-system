@@ -5,40 +5,11 @@ body {
   }
 
   .container {
+
     display: flex;
     align-items: center;
     justify-content: space-around;
     padding: 20px;
-  }
-
-  .refrigerator {
-    width: 150px;
-    height: 250px;
-    background-color: #ddd;
-    border-radius: 5px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-  }
-
-  .refrigerator .door {
-    width: 10px;
-    height: 250px;
-    background-color: #ccc;
-    position: absolute;
-    right: 5px;
-  }
-
-  .refrigerator .freezer {
-    width: 150px;
-    height: 120px;
-    background-color: #ddd;
-  }
-
-  .form-container {
-    width: 300px;
-    background-color: white;
-    border-radius: 5px;
-    padding: 20px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   }
 
   h1 {
@@ -92,4 +63,22 @@ body {
   .button-add {
     background-color: #4CAF50;
     color: white;
+  }
+
+  .dropdown{
+  display: block;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+  .tabelas{
+    display: flex;
+    align-items: center;
+    
+    padding: 20px;
+  }
+
+  .flex-tabelas{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
   }
