@@ -2,9 +2,10 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models/db_conn');
 
-router.put('/id', async (req, res) => {
+router.put('/:id', async (req, res) => {
     try {
-        const { id, name, description, validity } = req.body;
+        const id = parseInt(req.params.id);
+        const { name, description, validity } = req.body;
         await db.executeProcedure('UpdateProductById', { id, name, description, validity });
         res.status(200).send('Product updated successfully.');
     } catch (error) {
@@ -12,9 +13,9 @@ router.put('/id', async (req, res) => {
     }
 });
 
-router.delete('/id', async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try {
-        const { id } = req.body;
+        const id = parseInt(req.params.id);
         await db.executeProcedure('DeleteProductById', { id });
         res.status(200).send('Product deleted successfully.');
     } catch (error) {
@@ -22,9 +23,9 @@ router.delete('/id', async (req, res) => {
     }
 });
 
-router.get('/id', async (req, res) => {
+router.get('/:id', async (req, res) => {
     try {
-        const { id } = req.body;
+        const id = parseInt(req.params.id);
         const result = await db.executeQuery(`SELECT * FROM products WHERE id = ${ id }`);
         res.status(200).json(result.recordset);
     } catch (error) {
