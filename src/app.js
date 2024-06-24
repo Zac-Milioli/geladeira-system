@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const productRoutes = require('./routes/productRoutes');
 const fridgeRoutes = require('./routes/fridgeRoutes');
 const freezerRoutes = require('./routes/freezerRoutes');
@@ -6,6 +7,7 @@ const freezerRoutes = require('./routes/freezerRoutes');
 const app = express();
 const PORT = 3000;
 
+app.use(cors())
 app.use(express.json());
 app.use(express.static('views/index.html'));
 
