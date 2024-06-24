@@ -2,7 +2,7 @@ const sql = require("mssql");
 const config = {
     server: 'localhost',
     database: 'GELADEIRA',
-    port: 1433,
+    port: 3000,
     user: 'desespero',
     password: 'desespero123',
     trustServerCertificate: true,
